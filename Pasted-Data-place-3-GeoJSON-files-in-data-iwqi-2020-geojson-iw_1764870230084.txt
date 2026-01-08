@@ -1,0 +1,26 @@
+Data: place 3 GeoJSON files in /data/: iwqi_2020.geojson, iwqi_2022.geojson, iwqi_2024.geojson. Each feature must include: station_id, location_name, lat, lon, year, iwqi (0–100), iwqi_category, pH, EC_uS_cm, TDS_mg_L, Na_mg_L, K_mg_L, Ca_mg_L, Mg_mg_L, Cl_mg_L, HCO3_mg_L, SO4_mg_L, NO3_mg_L, SAR.
+Tech: Leaflet.js + OSM basemap (React/Vite or HTML/JS). Chart.js or D3 for charts.
+Styling & legend: IWQI classes and colors — 0–25 Excellent (Green); 25–40 Good (Light Green); 40–60 Moderate (Yellow); 60–80 Poor (Orange); 80–100 Unsuitable (Red). Show numeric ranges in the legend and color badges.
+Map features: Toggle layers for 2020, 2022, 2024; year selector. Side-by-side swipe comparison (2020 vs 2024). Change-detection layer (IWQI_2024 − IWQI_2020) with diverging colors. Marker clustering at low zoom; tooltips on hover.
+On-click popup & detail panel: Show location name, station_id, year, IWQI value & category. Show full parameter table: pH, EC, TDS, Na, K, Ca, Mg, Cl, HCO3, SO4, NO3, SAR (with units). Mini sparkline of IWQI (2020, 2022, 2024) for that station. Crop suitability (based on iwqi_category; lists below). Download station data (CSV/JSON). Persistent right panel: larger IWQI time series, parameter charts, radar chart, brief automated interpretation.
+Trend & comparison tools: Station-level IWQI & parameter trends. Area draw tool (compute mean IWQI per year, % points in each class). Export area/station reports as CSV; map PNG export.
+Pages to include: Home, Interactive IWQI Map, Comparison, Trends, Crop Suitability, Water Resources Management, Methodology, About/References.
+Crop suitability lists (display in popups & Crop Suitability page):
+IWQI 0–25 (Excellent): Rice, Sugarcane, Banana, Paddy, Leafy vegetables (spinach, lettuce), Citrus (orange, sweet lime)
+IWQI 25–40 (Good): Maize, Cotton, Groundnut, Soybean, Tomato, Potato, Chilli
+IWQI 40–60 (Moderate): Millets (ragi, jowar), Pearl millet, Sesame, Sunflower, Lentils (dal), Sorghum
+IWQI 60–80 (Poor): Bajra (pearl millet), Guar, Cowpea, Castor, Fodder crops (tolerant varieties)
+IWQI 80–100 (Unsuitable): Not recommended for irrigation; advise blending, treatment, or non-food industrial crops
+Water Resources Management section (display these points):
+Regular monitoring (quarterly in hotspots)
+Blending poor/good water before irrigation
+Gypsum & soil amendments for sodicity
+Salt-tolerant crop varieties
+Crop rotation & deep-rooted species
+Drip/sprinkler irrigation
+Rainwater harvesting & percolation/recharge pits
+Managed aquifer recharge in monsoon
+Protect recharge zones from contamination
+Constructed wetlands / phytoremediation for nitrates
+Farmer training & IWQI advisory services
+Deliverables: Working Replit site + /data/ with GeoJSONs; map with 3-year layers, popups with full parameters and crop lists; trend and comparison tools, area statistics, export options; README describing schema and deployment steps.
